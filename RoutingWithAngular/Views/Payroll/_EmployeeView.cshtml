@@ -1,0 +1,25 @@
+﻿@model RoutingWithAngular.Models.Payroll.Employee
+
+<div>
+    @using (Ajax.BeginForm("SaveEmployee", "Payroll", null, new AjaxOptions() { HttpMethod = "POST", OnSuccess = "AjaxOnSuccess" }, new { }))
+    {
+        <div>
+            First Name:
+            <br />
+            @Html.TextBoxFor(Model => Model.FirstName)
+        </div>
+        <div>
+            MI:
+            <br />
+            @Html.TextBoxFor(Model => Model.MI)
+        </div>
+        <div>
+            Last Name:
+            <br />
+            @Html.TextBoxFor(Model => Model.LastName)
+        </div>
+        <button type="submit">
+            Submit
+        </button>
+    }
+</div>
