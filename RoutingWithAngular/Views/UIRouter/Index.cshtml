@@ -14,7 +14,10 @@
             <a ui-sref="state1">State 1</a>
         </li>
         <li>
-            <a ui-sref="state2">State 2</a>
+            <a ui-sref="state2({ id: ''})">State 2 no params</a>
+        </li>
+        <li>
+            <a ui-sref="state2({ id:3 })">State 2 id=3</a>
         </li>
         <li>
             <a ui-sref="employee">Employee</a>
@@ -43,15 +46,28 @@
                         templateUrl: "@Url.Action("_Home")"
                     })
                     .state('state1', {
-                        url: "/state1",
+                        url: "/state1/",
                         templateUrl: "@Url.Action("_State1")"
                     })
                     .state('state2', {
                         url: "/state2/{id}",
-                        templateUrl: "@Url.Action("_State2")?id={id}"
+                        templateUrl: function (params) {
+                            console.log(params);
+                            var queryString = "";
+                            var counter = 0;
+                            console.log(params);
+                            for (var p in params) {
+                                if (counter == 0)
+                                    queryString += "?" + p + "=" + params[p];
+                                else
+                                    queryString += "&" + p + "=" + params[p];
+                                counter++;
+                            }
+                            return "@Url.Action("_State2")" + queryString;
+                        }
                     })
                     .state('employee', {
-                        url: "/payroll/employees",
+                        url: "/payroll/employees/",
                         templateUrl: "@Url.Action("Employees", "Payroll", null)"
                     })
             });
