@@ -21,6 +21,9 @@ namespace RoutingWithAngular
                 "~/Scripts/knockout-{version}.js",
                 "~/Scripts/knockout.validation.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/barbajs").Include(
+                "~/Scripts/barba.js"));
+
             //bundles.Add(new ScriptBundle("~/bundles/app").Include(
             //    "~/Scripts/sammy-{version}.js",
             //    "~/Scripts/app/common.js",

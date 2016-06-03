@@ -13,20 +13,20 @@ namespace RoutingWithAngular.Controllers
             return View();
         }
 
-        public ActionResult _Home()
+        public ActionResult Home()
         {
-            return PartialView();
+            return View();
         }
 
-        public PartialViewResult _State1()
+        public ActionResult State1()
         {
-            return PartialView();
+            return View();
         }
 
-        public PartialViewResult _State2(int? id)
+        public ActionResult State2(int? id)
         {
             ViewBag.testid = id.HasValue ? id.Value : -1;
-            return PartialView();
+            return View();
         }
     }
 }

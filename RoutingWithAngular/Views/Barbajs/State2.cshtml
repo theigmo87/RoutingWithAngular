@@ -1,8 +1,8 @@
-﻿@{ 
+﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@section SecondaryNav{ 
+@section SecondaryNav{
     <h1>
         Barba.JS
     </h1>
@@ -26,25 +26,9 @@
 
 <div id="barba-wrapper">
     <div class="barba-container">
-        This will show first
+        <h1>State 2</h1>
+        <div>
+            testid: @ViewBag.testid
+        </div>
     </div>
 </div>
-
-
-@section Scripts{
-    @Scripts.Render("~/bundles/barbajs")
-    <script>
-        Barba.Pjax.start();
-
-        function AjaxOnSuccess(data) {
-            Barba.Pjax.goTo('@Url.Action("State1", "barbajs")');
-        }
-        Barba.Dispatcher.on("newPageReady", function (currentStatus, oldStatus, container) {
-            console.log("newpageready");
-            if (typeof onViewReady === "function") {
-                console.log(arguments);
-                onViewReady();
-            }
-        });
-    </script>
-}

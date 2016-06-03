@@ -9,25 +9,21 @@
     <div style="margin-top:36px;">
         <ul class="nav nav-tabs">
             <li>
-                @Html.ActionLink("Home", "Home", "Barbajs")
+                @Html.ActionLink("Home", "Home")
             </li>
             <li>
-                @Html.ActionLink("State1", "State1", "Barbajs")
+                @Html.ActionLink("State1", "State1")
             </li>
             <li>
-                @Html.ActionLink("State2", "State2", "Barbajs")
+                @Html.ActionLink("State2", "State2")
             </li>
             <li>
-                @Html.ActionLink("Employees", "Index", "Payroll", new { UseBarba = true }, null)
+                @Html.ActionLink("Employees", "Index", "Payroll", null, null)
             </li>
         </ul>
     </div>
 }
 
 <div class="barba-container">
-    @Html.Action("Employees", new { id = 0 })
-    <script>
-        alert("hello");
-    </script>
+    <h1>Home state</h1>
 </div>
-

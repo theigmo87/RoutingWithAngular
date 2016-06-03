@@ -227,6 +227,8 @@
     <Content Include="Scripts\angular-ui-router.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\barba.js" />
+    <Content Include="Scripts\barba.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\RoutingWithAngular.pubxml" />
@@ -264,9 +266,9 @@
     <Content Include="Views\UIRouter\_State2.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Barbajs\_Home.cshtml" />
-    <Content Include="Views\Barbajs\_State1.cshtml" />
-    <Content Include="Views\Barbajs\_State2.cshtml" />
+    <Content Include="Views\Barbajs\Home.cshtml" />
+    <Content Include="Views\Barbajs\State1.cshtml" />
+    <Content Include="Views\Barbajs\State2.cshtml" />
     <Content Include="Views\Barbajs\Index.cshtml" />
     <Content Include="Views\Pjax\_Home.cshtml" />
     <Content Include="Views\Pjax\_State1.cshtml" />
