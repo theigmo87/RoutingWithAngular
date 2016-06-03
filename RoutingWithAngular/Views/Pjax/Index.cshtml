@@ -1,0 +1,66 @@
+﻿@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>
+    PJAX
+</h1>
+<div style="margin-top:36px;">
+    <ul class="nav nav-tabs">
+        <li>
+            <a ui-sref="home">Home State</a>
+        </li>
+        <li>
+            <a ui-sref="state1">State 1</a>
+        </li>
+        <li>
+            <a ui-sref="state2">State 2</a>
+        </li>
+        <li>
+            <a ui-sref="employee">Employee</a>
+        </li>
+    </ul>
+</div>
+<div ui-view></div>
+<hr />
+
+
+@section Scripts{
+    @Scripts.Render("~/bundles/angular-ui-router")
+    <script>
+            var myApp = angular.module('myApp', ['ui.router']);
+    </script>
+    <script>
+            myApp.config(function ($stateProvider, $urlRouterProvider) {
+                //
+                // For any unmatched url, redirect to /home
+                $urlRouterProvider.otherwise("/");
+                //
+                // Now set up the states
+                $stateProvider
+                    .state('home', {
+                        url: "/",
+                        templateUrl: "@Url.Action("_Home")"
+                    })
+                    .state('state1', {
+                        url: "/state1",
+                        templateUrl: "@Url.Action("_State1")"
+                    })
+                    .state('state2', {
+                        url: "/state2/{id}",
+                        templateUrl: "@Url.Action("_State2")?id={id}"
+                    })
+                    .state('employee', {
+                        url: "/payroll/employees",
+                        templateUrl: "@Url.Action("Employees", "Payroll", null)"
+                    })
+            });
+    </script>
+    <script>
+            function AjaxOnSuccess(data) {
+                data.onSuccessState
+                var stateProvider = angular.element(document.getElementsByTagName("html")).injector().get("$state");
+                stateProvider.go(data.onSuccessState);
+            }
+    </script>
+}

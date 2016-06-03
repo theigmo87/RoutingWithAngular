@@ -1,5 +1,8 @@
 ﻿@model RoutingWithAngular.Models.Payroll.Employee
 
+<h1>
+    Employee View
+</h1>
 <div>
     @using (Ajax.BeginForm("SaveEmployee", "Payroll", null, new AjaxOptions() { HttpMethod = "POST", OnSuccess = "AjaxOnSuccess" }, new { }))
     {
